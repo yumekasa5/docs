@@ -7,8 +7,14 @@
 CCDセンサが計測した値、すなわち信号は以下の式で計算される
 
 ```math
-Signal = QE * 感度 * PhotonCount
+S = QE * 感度 * P
 ```
+
+ここで、
+
+- $S$ : 信号
+- $QE$ : 量子変換効率(光子数に対する変換可能な電荷の数の割合)
+- $P$ : 光子数
 
 2. Noise
 - ReadoutNoise
@@ -23,6 +29,29 @@ Signal = QE * 感度 * PhotonCount
 - DarkCurrent(DarkCharge)
 - PhotonShotNoise
 
+
+## Camera Specification
+
+|Specification|SOPHIA-XO 2048 eXcelon|
+|---|---|
+|CCD|e2v CCD230-42|
+|Image Type|monochrome|
+|Resolution|2048 x 2048|
+|Pixel Size|15um x 15um|
+|Image Area|30.7mm x 30.7mm|
+|Frame Rate|3.21fps(full frame @ 4MHz, 4port-readout, 24us vertical shift rate)|
+|Readout Amplifers(Readout Port)|4|
+|ADC(A/D Conversion) Speed/16bits|400kHz, 4MHz, 16MHz|
+|Vertical Shift Rate|24us/row|
+|Read Noise|100kHz - 4.5 $e^{-}$ rms|
+||1MHz - 8.5 $e^{-}$ rms|
+||4MHz - 22 $e^{-}$ rms|
+
+## Shutter Specification
+
+外部シャッターを利用している場合の仕様は以下の表の通り
+
+![](ShutterSpecification.png)
 
 ## Exposure
 
