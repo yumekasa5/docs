@@ -1,0 +1,38 @@
+@startuml
+
+title Fig. Activity Diagram
+
+(*) --> "Initialization"
+
+(*) --> "Initialize"
+note right
+    This is the first step
+    of the process
+end note
+"Initialize" --> "First Activity"
+"First Activity" --> [You can put a label] "Second Activity"
+"Second Activity" -right-> "Third Activity"
+
+partition Evalutaion {
+if "Some Test" then
+    -->[true] "Some Activity"
+    note right
+        This is just an example
+        of the note.
+    end note
+    --> "Another Activity"
+    else
+    ->[false] "Something else"
+    note    left
+        This is the note
+        on the left of
+        the activity
+    end note
+    }
+    -->[Ending process] "Finalize"
+endif
+
+"Another Activity" --> "Finalize"
+"Finalize" --> (*)
+
+@enduml
